@@ -5,3 +5,163 @@
   margin: 0;
   box-sizing: border-box;
 }
+
+/* Variables */
+:root {
+  --primary-background-color: rgb(38, 58, 59);
+  --secondary-background-color: rgb(15, 17, 17);
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: clean ;
+  src: url('./fonts/Lato-Regular.ttf');
+}
+
+/* Changing app size to work on responsiveness */
+
+.App {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  font-family: clean;
+} 
+
+.main-container {
+  position: relative;
+  width: 30%;
+  height: 80%;
+}
+
+/* Rates panel */
+.rates-panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  grid-auto-flow: row;
+  height: 80%;
+  width: 100%;
+  background-image: radial-gradient(var(--primary-background-color), var(--secondary-background-color));
+  border-radius: 2px;
+  overflow: scroll;
+}
+
+.rates-panel::-webkit-scrollbar {
+  width: 0;
+}
+
+/* Base currency top item */
+.base-item {
+  position: sticky;
+  top: 0;
+  height: 64px;
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  background-image: linear-gradient(to top, rgb(78, 111, 121), rgb(117, 155, 173));
+  color: rgb(165, 255, 255);
+  z-index: 2;
+}
+
+.base {
+  font-size: .7rem;
+  margin-right: .3rem;
+}
+
+.base-options-container {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr;
+}
+
+.base-options {
+  display: inline;
+  height: 2rem;
+  width: 4rem;
+  border: 1px solid rgb(165, 255, 255);
+  border-radius: 2px;
+  color: rgb(165, 255, 255);
+  background-color: black;
+}
+
+/* Individual rate item */
+.rate-item {
+  position: relative;
+  height: 100%;
+  min-height: 64px;
+  width: 100%;
+  display: grid;
+  place-items: center;
+  grid-template-columns: repeat(3, 1fr);
+  background-image: linear-gradient(to top, rgb(25, 32, 34), rgb(45, 62, 70));
+  color: rgb(165, 255, 255);
+}
+
+.rate-item:hover {
+  cursor: pointer;
+  background-image: linear-gradient(to top, rgb(25, 32, 34), rgb(58, 81, 92));
+}
+
+/* bottom menu / panel */
+#bottom-menu {
+  position: sticky;
+  top: 64px;
+  width: 100%;
+  height: auto;
+  height: 44px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  place-items: center;
+  background-image: linear-gradient(to top, rgb(78, 111, 121), rgb(117, 155, 173));
+  padding-right: 1rem;
+  padding-left: 1rem;
+  transition: height 1s;
+  z-index: 2;
+}
+
+.time-container {
+  position: absolute;
+  top: .6rem;
+  left: .6rem;
+}
+
+.clock {
+  height: 1.4rem;
+  width: 1.4rem;
+  background-image: url('./images/ui_icons/clock.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+#settings-wheel {
+  position: absolute;
+  top: .6rem;
+  right: .6rem;
+  background-image: url('./images/ui_icons/settings-wheel.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 1.4rem;
+  width: 1.4rem;
+  justify-self: right;
+  cursor: pointer;
+  transition: transform 1s;
+}
+
+.settings-open {
+  height: 10rem !important;
+}
+
+.settings-closed {
+  height: 44px !important;
+}
+
+.settings-wheel-open {
+  transform: rotateZ(360deg);
+}
+
+.settings-wheel-closed {
+  transform: rotateZ(0deg);
+}
