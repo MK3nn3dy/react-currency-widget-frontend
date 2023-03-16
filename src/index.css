@@ -8,8 +8,11 @@
 
 /* Variables */
 :root {
-  --primary-background-color: rgb(38, 58, 59);
-  --secondary-background-color: rgb(15, 17, 17);
+  --primary-background-color: #192022;
+  --secondary-background-color: #2d3e46;
+  --primary-hover-color: #192022;
+  --secondary-hover-color: #3a515c;
+  --primary-text-color: #a5ffff;
 }
 
 /* Fonts */
@@ -27,7 +30,6 @@
   display: grid;
   place-items: center;
   font-family: clean;
-  border: 1px solid red;
 } 
 
 .main-container {
@@ -68,11 +70,12 @@
   grid-template-columns: repeat(3, 1fr);
   place-items: center;
   background-image: linear-gradient(to top, rgb(78, 111, 121), rgb(117, 155, 173));
-  color: rgb(165, 255, 255);
+  color: var(--primary-text-color);
   z-index: 2;
 }
 
 .base {
+  color: #a5ffff;
   font-size: .7rem;
   margin-right: .3rem;
 }
@@ -86,11 +89,11 @@
 .base-options {
   display: inline;
   height: 2rem;
-  width: 4rem;
-  border: 1px solid rgb(165, 255, 255);
+  width: 3.4rem;
+  border: 1px solid var(--primary-text-color);
   border-radius: 2px;
-  color: rgb(165, 255, 255);
-  background-color: black;
+  color: var(--primary-text-color);
+  background-color: var(--primary-background-color);
 }
 
 /* Individual rate item */
@@ -102,13 +105,13 @@
   display: grid;
   place-items: center;
   grid-template-columns: repeat(3, 1fr);
-  background-image: linear-gradient(to top, rgb(25, 32, 34), rgb(45, 62, 70));
-  color: rgb(165, 255, 255);
+  background-image: linear-gradient(to top, var(--primary-background-color), var(--secondary-background-color));
+  color: var(--primary-text-color);
 }
 
 .rate-item:hover {
   cursor: pointer;
-  background-image: linear-gradient(to top, rgb(25, 32, 34), rgb(58, 81, 92));
+  background-image: linear-gradient(to top, var(--primary-hover-color), var(--secondary-hover-color));
 }
 
 /* bottom menu / panel */
@@ -126,6 +129,7 @@
   padding-left: 1rem;
   transition: height 1s;
   z-index: 2;
+  overflow: hidden;
 }
 
 /* time */
@@ -144,7 +148,7 @@
 }
 
 .time {
-  color: rgb(165, 255, 255);
+  color: var(--primary-text-color);
   margin-left: 1.6rem;
 }
 
@@ -196,10 +200,10 @@
 /* theme toggle */
 #theme-toggle {
   position: absolute;
-  top: 2rem;
+  top: 3.2rem;
   left: .6rem;
   height: 1rem;
-  width: 3rem;
+  width: 2rem;
   border-radius: .5rem;
   transition: background-color .5s;
 }
@@ -209,7 +213,7 @@
   height: 1rem;
   width: 1rem;
   border-radius: 50%;
-  transition: background-color .5s;
+  transition: all .5s;
 }
 
 .toggle-night {
@@ -222,8 +226,10 @@
 
 .toggle-ball-night {
   background-color: grey;
+  left: 0;
 }
 
 .toggle-ball-day {
   background-color: white;
+  left: 1rem;
 }

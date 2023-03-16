@@ -16,7 +16,6 @@ const Base = ({currentBase, flag}) => {
     },[currentBase])
 
     const handleChange = (e) => {
-        console.log("The value of the select menu is: ", e.target.value);
         dispatch(setBase(e.target.value))
     }
 

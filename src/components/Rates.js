@@ -20,8 +20,6 @@ const Rates = () => {
     const currentBase = useSelector((state) => state.rates.base);
     const currentRates = useSelector((state) => state.rates.rates.rates);
     const state = useSelector((state) => state);
-    console.log("Rates refreshed and the state is: ", state);
-    
 
     // async function get rates for base
     const getRatesFromBase = async(base) => {
