@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
     settingsVisible: false,
-    theme: "default"
+    nightTheme: true
 }
 
 const interfaceSlice = createSlice({
@@ -11,10 +11,13 @@ const interfaceSlice = createSlice({
     reducers: {
         toggleSettings: (state) => {
             state.settingsVisible = !state.settingsVisible;
+        },
+        toggleTheme: (state) => {
+            state.nightTheme = !state.nightTheme;
         }
     }
 })
 
-export const { toggleSettings } = interfaceSlice.actions;
+export const { toggleSettings, toggleTheme } = interfaceSlice.actions;
 
 export default interfaceSlice.reducer;

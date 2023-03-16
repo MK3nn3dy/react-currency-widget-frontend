@@ -27,12 +27,19 @@
   display: grid;
   place-items: center;
   font-family: clean;
+  border: 1px solid red;
 } 
 
 .main-container {
   position: relative;
   width: 30%;
-  height: 80%;
+  height: auto;
+  max-height: 40rem;
+  overflow: scroll;
+}
+
+.main-container::-webkit-scrollbar {
+  width: 0;
 }
 
 /* Rates panel */
@@ -41,11 +48,10 @@
   display: grid;
   place-items: center;
   grid-auto-flow: row;
-  height: 80%;
+  height: auto;
   width: 100%;
   background-image: radial-gradient(var(--primary-background-color), var(--secondary-background-color));
   border-radius: 2px;
-  overflow: scroll;
 }
 
 .rates-panel::-webkit-scrollbar {
@@ -122,6 +128,7 @@
   z-index: 2;
 }
 
+/* time */
 .time-container {
   position: absolute;
   top: .6rem;
@@ -136,6 +143,12 @@
   background-repeat: no-repeat;
 }
 
+.time {
+  color: rgb(165, 255, 255);
+  margin-left: 1.6rem;
+}
+
+/* settings wheel */
 #settings-wheel {
   position: absolute;
   top: .6rem;
@@ -151,7 +164,7 @@
 }
 
 .settings-open {
-  height: 10rem !important;
+  height: 5.6rem !important;
 }
 
 .settings-closed {
@@ -164,4 +177,53 @@
 
 .settings-wheel-closed {
   transform: rotateZ(0deg);
+}
+
+/* refresh */
+.refresh {
+  cursor: pointer;
+  position: absolute;
+  top: .7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1.2rem;
+  width: 1.2rem;
+  background-image: url('./images/ui_icons/refresh-icon.png');
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+/* theme toggle */
+#theme-toggle {
+  position: absolute;
+  top: 2rem;
+  left: .6rem;
+  height: 1rem;
+  width: 3rem;
+  border-radius: .5rem;
+  transition: background-color .5s;
+}
+
+#theme-ball {
+  position: relative;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  transition: background-color .5s;
+}
+
+.toggle-night {
+  background-color: rgb(26, 27, 31);
+}
+
+.toggle-day {
+  background-color: skyblue;
+}
+
+.toggle-ball-night {
+  background-color: grey;
+}
+
+.toggle-ball-day {
+  background-color: white;
 }

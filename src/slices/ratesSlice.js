@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 let initialState = {
-    base: 'GBP',
+    base: 'USD',
     rates: {}
 }
 

@@ -1,5 +1,9 @@
 import { useDispatch, useSelector } from "react-redux";
 import { toggleSettings } from "../slices/interfaceSlice";
+
+// component imports
+import Clock from "./Clock";
+
 const BottomMenu = () => {
 
     const dispatch = useDispatch();
@@ -10,16 +14,23 @@ const BottomMenu = () => {
         dispatch(toggleSettings());
     }
 
+    const handleThemeChange = (e) => {
+        
+    }
+
     return (
         <div id="bottom-menu" className={settingsVisibility ? "settings-open" : "settings-closed"}>
             <div className="time-container">
-                <div className="clock"></div><span id="time"></span>
+                <Clock />
             </div>
             <div className="refresh">
                 
             </div>
             <div id="settings-wheel" className={settingsVisibility ? "settings-wheel-open" : "settings-wheel-closed"} onClick={handleSettings}>
 
+            </div>
+            <div id="theme-toggle">
+                <div id="theme-ball"></div>
             </div>
         </div>
     )
