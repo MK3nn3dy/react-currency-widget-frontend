@@ -2,6 +2,8 @@
 
 ## Frontend
 
+![An image of the widget](./src/images/widget_gif.gif)
+
 This is a simple exchange rates widget I made as a tech test for a job interview. It was made within the day. It uses:
 
 - React
